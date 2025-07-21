@@ -1,0 +1,28 @@
+{
+  "name": "99ttcc devcontainer",
+  "image": "ghcr.io/6thpath/typescript-node",
+  "runArgs": [
+    "--security-opt=no-new-privileges", // ? prevent privilege escalation
+    "--cap-drop=ALL", // ? drop all kernel capabilities
+    "--network=devnet" // ? use a custom network for the container
+  ],
+  "forwardPorts": [2048],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "streetsidesoftware.code-spell-checker",
+        "naumovs.color-highlight",
+        "dbaeumer.vscode-eslint",
+        "donjayamanne.githistory",
+        "eamodio.gitlens",
+        "oderwat.indent-rainbow",
+        "esbenp.prettier-vscode",
+        "bradlc.vscode-tailwindcss",
+        "formulahendry.auto-rename-tag",
+        "chakrounanas.turbo-console-log",
+        "usernamehw.errorlens",
+        "pflannery.vscode-versionlens"
+      ]
+    }
+  }
+}

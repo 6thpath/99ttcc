@@ -1,0 +1,31 @@
+@utility glass-box-inset-shadow {
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    inset 0 2px 4px -1px rgba(255, 255, 255, 0.1);
+}
+
+@utility glass-box {
+  @apply border border-slate-100/20;
+  @apply glass-box-inset-shadow backdrop-blur-md;
+  @apply before:absolute before:inset-0 before:-z-10 before:rounded-[inherit];
+  @apply before:bg-gradient-to-br before:from-white/5 before:to-black/15;
+}
+
+@utility glass-box-primary {
+  @apply glass-box bg-slate-500/40 text-slate-50/95;
+}
+
+@utility glass-box-secondary {
+  @apply glass-box bg-slate-900/40 text-slate-200/90;
+}
+
+@utility glass-box-tertiary {
+  @apply glass-box bg-slate-500/30 text-slate-200/90;
+}
+
+@utility scrollbar-hidden {
+  scrollbar-width: none;
+}
+@utility scrollbar-stable {
+  scrollbar-gutter: stable;
+}

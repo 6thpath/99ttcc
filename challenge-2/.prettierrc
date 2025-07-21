@@ -1,0 +1,8 @@
+{
+  "semi": false,
+  "printWidth": 128,
+  "singleQuote": true,
+  "htmlWhitespaceSensitivity": "ignore",
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "tailwindStylesheet": "./source/styles/index.css"
+}

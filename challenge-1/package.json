@@ -1,0 +1,11 @@
+{
+  "name": "challenge-1",
+  "version": "0.1.0",
+  "packageManager": "pnpm@10.13.1",
+  "scripts": {
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "vitest": "3.2.4"
+  }
+}

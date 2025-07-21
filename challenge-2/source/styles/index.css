@@ -1,0 +1,16 @@
+@import 'tailwindcss';
+
+@import './theme.css';
+@import './utilities.css';
+@import './components.css';
+@import './rac.css';
+
+body {
+  @apply flex min-h-svh w-svw items-center justify-center p-4;
+  @apply font-sans text-base text-slate-950/80;
+  background: radial-gradient(circle at 0% 20%, var(--color-slate-100) -25%, var(--color-slate-950) 100%);
+}
+
+#root {
+  @apply contents;
+}
