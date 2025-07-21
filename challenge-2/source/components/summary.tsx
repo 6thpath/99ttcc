@@ -1,8 +1,9 @@
-import type { TokenSwapForm } from '@/api'
-import { IconAlert } from '@/components/icons'
 import NumberFlow from '@number-flow/react'
 import { useMemo } from 'react'
-import { useFormState, useWatch, type Control } from 'react-hook-form'
+import { type Control, useFormState, useWatch } from 'react-hook-form'
+
+import type { TokenSwapForm } from '@/api'
+import { IconAlert } from '@/components/icons'
 
 type Props = {
   control: Control<TokenSwapForm>
@@ -56,11 +57,20 @@ export const Summary: React.FC<Props> = ({ control }) => {
         ),
       },
     ]
-  }, [fromToken, toToken, slippage])
+  }, [fromToken, toToken, slippage, deadline])
 
-  console.debug(errors)
   if (errors.root) {
-    return <div>{errors.root.message}</div>
+    return (
+      <div
+        className={[
+          'glass-box-tertiary glass-box-inset-shadow',
+          'mt-2 rounded-xl p-2 font-semibold tracking-wide',
+          'border-rose-100/80 bg-rose-100/95 text-rose-800/90',
+        ].join(' ')}
+      >
+        {errors.root.message}
+      </div>
+    )
   }
 
   function formatTime(timeLeftInMinutes: number) {

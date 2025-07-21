@@ -12,10 +12,10 @@ export const tokenSwapFormSchema = z
   .object({
     fromToken: tokenSchema,
     fromBalance: z.number(),
-    fromValue: z.number(),
+    fromValue: z.number().gt(0),
     toToken: tokenSchema,
     toBalance: z.number(),
-    toValue: z.number(),
+    toValue: z.number().gt(0),
     slippage: z.number().check((context) => {
       if (context.value > 100 || context.value < 0) {
         context.issues.push({

@@ -21,9 +21,9 @@
 
 .react-aria-Modal {
   @apply glass-box-primary glass-box-inset-shadow;
-  @apply p-3 rounded-xl;
+  @apply rounded-xl p-3;
 
-	min-width: 300px;
+  min-width: 300px;
   max-width: 300px;
   outline: none;
 
@@ -49,5 +49,34 @@
 
   to {
     transform: scale(1);
+  }
+}
+
+.react-aria-Popover {
+  outline: none;
+  transition:
+    transform 250ms ease-in-out,
+    opacity 150ms ease-in;
+
+  &[data-entering],
+  &[data-exiting] {
+    transform: var(--origin);
+    opacity: 0;
+  }
+
+  &[data-placement='top'] {
+    --origin: translateY(8px);
+  }
+
+  &[data-placement='bottom'] {
+    --origin: translateY(-8px);
+  }
+
+  &[data-placement='right'] {
+    --origin: translateX(-8px);
+  }
+
+  &[data-placement='left'] {
+    --origin: translateX(8px);
   }
 }
