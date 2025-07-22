@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 
-import { type Token, getExchangeRate } from '@/api'
+import { getExchangeRate, type Token } from '@/api'
 
 export const useExchangeRate = () => {
   return useQuery({

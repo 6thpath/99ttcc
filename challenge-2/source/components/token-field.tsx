@@ -1,11 +1,11 @@
+import NumberFlow from '@number-flow/react'
 import { Button, Group, Input, NumberField } from 'react-aria-components'
 import { type Control, useController, type UseFormGetValues, type UseFormSetValue, useWatch } from 'react-hook-form'
-import NumberFlow from '@number-flow/react'
 
-import { TokenSelect } from '@/components/token-select'
 import type { Token, TokenSwapForm } from '@/api'
+import { TokenSelect } from '@/components/token-select'
 
-const usd = (n) => n.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
+const usd = (n: number) => n.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
 
 type Props = {
   context: 'from' | 'to'

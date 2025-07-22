@@ -1,10 +1,10 @@
-import { Button, Dialog, DialogTrigger, GridList, GridListItem, Heading, Modal, type Selection } from 'react-aria-components'
-
-import { IconCross } from '@/components/icons'
-import { useExchangeRate } from '@/hooks/use-exchange-rate'
-import type { Token } from '@/api'
 import Fuse, { type IFuseOptions } from 'fuse.js'
 import { useEffect, useState } from 'react'
+import { Button, Dialog, DialogTrigger, GridList, GridListItem, Heading, Modal, type Selection } from 'react-aria-components'
+
+import type { Token } from '@/api'
+import { IconCross } from '@/components/icons'
+import { useExchangeRate } from '@/hooks/use-exchange-rate'
 
 const fuseOptions: IFuseOptions<Token> = {
   threshold: 0.2,

@@ -2,10 +2,10 @@ import jsEslint from '@eslint/js'
 import queryPlugin from '@tanstack/eslint-plugin-query'
 import tsParser from '@typescript-eslint/parser'
 import { defineConfig } from 'eslint/config'
+import prettierConfig from 'eslint-config-prettier'
 import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript'
 import { flatConfigs as importXPPluginConfigs } from 'eslint-plugin-import-x'
 import jsxA11yPlugin from 'eslint-plugin-jsx-a11y'
-import prettierPlugin from 'eslint-plugin-prettier/recommended'
 import reactPlugin from 'eslint-plugin-react'
 import reactHooksPlugin from 'eslint-plugin-react-hooks'
 import reactRefreshPlugin from 'eslint-plugin-react-refresh'
@@ -19,7 +19,7 @@ export default defineConfig([
   ...tsEslintConfig.recommendedTypeChecked,
   importXPPluginConfigs.recommended,
   importXPPluginConfigs.typescript,
-  prettierPlugin,
+  prettierConfig,
   {
     ignores: ['.pnpm-store/', '.vscode/', 'dist/', 'node_modules/', 'source/vite-env.d.ts'],
   },

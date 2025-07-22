@@ -1,6 +1,7 @@
+import { type Control, type UseFormSetValue, useWatch } from 'react-hook-form'
+
 import type { TokenSwapForm } from '@/api'
 import { IconExchange } from '@/components/icons'
-import { useWatch, type Control, type UseFormSetValue } from 'react-hook-form'
 
 type Props = {
   control: Control<TokenSwapForm>

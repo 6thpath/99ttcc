@@ -1,6 +1,3 @@
-# folders
-.pnpm-store/
 node_modules/
 
-# files
 pnpm-lock.yaml
