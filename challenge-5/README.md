@@ -48,6 +48,8 @@ root/
 
 2. **Configure environment:**
    - (Required) Download and place it `.env.keys` at root.
+      - **Permission required** because encrypted `.env` contains database credentials
+      - Source: https://drive.google.com/file/d/1h3Xs75oYv_KAu5YYsCbmeL5qIsgYazrV/view?usp=sharing
    - (Optional) Decrypt with [dotenvx](https://dotenvx.com/) if you want to view env vars:
      ```sh
      pnpm run env:dec
