@@ -6,7 +6,7 @@
     "--cap-drop=ALL", // ? drop all kernel capabilities
     "--network=devnet" // ? use a custom network for the container
   ],
-  "forwardPorts": [2048],
+  "forwardPorts": [2048, 4096],
   "customizations": {
     "vscode": {
       "extensions": [

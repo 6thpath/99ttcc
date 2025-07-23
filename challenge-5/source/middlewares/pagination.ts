@@ -1,0 +1,4 @@
+import { query } from 'express-validator'
+
+export const validateOffset = query('offset').optional().isInt({ min: 0 }).toInt()
+export const validateLimit = query('limit').optional().isInt({ min: 1, max: 100 }).toInt()
