@@ -8,7 +8,7 @@
 8. at line 39, in `balances.filter(...)`, `lhsPriority` is undefined. It should be balancePriority instead, both `lhsPriority > -99` and `balance.amount <= 0` put in the same if block instead.
 9. at line 45, the `sort` code block has not solve the case when priority between item is equal, nothing is returned.
 10. at line 54, `useMemo` dependencies include `prices`, but sortedBalances does not use prices, causing useless recalculations.
-11. at line 56, `formattedBalances` is declared but unused and unnecessary. 
+11. at line 56, `formattedBalances` is declared but unused and unnecessary.
 12. at line 63, rows definition re-computes `usdValue` and formatting inline instead of precomputing with a memoized or mapped list.
 13. at line 68, map item `index` should not be used as React list key in this case because the order can be changed frequency.
 14. at line 71, `balance.formatted` is undefined because the previous redundant `sortedBalances.map` return a new array instead of manipulating source array.

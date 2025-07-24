@@ -22,18 +22,18 @@
 
 ## Component Details
 
-| Component                      | Description                                                                                                                                          | High-Load Strategies                                                                                                                       |
-| ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| API Services                   | Stateless REST + WebSocket endpoints for score updates & leaderboard broadcast                                                                       | Horizontally scalable behind load balancer, autoscaling                                                                                    |
-| Redis                          | Use Redis to hold leaderboard sorted sets & pub/sub for broadcasting updates                                                                         | Redis Cluster to horizontally shard data & pub/sub                                                                                         |
-| Authentication & Authorization | JWT validation service or middleware ensures authorized requests only                                                                                | Separate auth microservice, caching JWT public keys                                                                                        |
-| Score Validation               | Business logic to validate score increments, rate limiting, anomaly detection                                                                        | Distributed in API servers with cache synchronization                                                                                      |
-| WebSocket Gateway              | Handles large-scale connection management, keeps persistent WS connections                                                                           | Use dedicated WS gateway (e.g., NGINX,...) with sticky sessions                                                                            |
-| Messaging Queue                | This is a critical middleware component responsible for asynchronous, reliable, and decoupled communication between Quest Service and Score Service. | Continuously monitor queue depth, processing lag, and broker health, choose the right tools for each case(Kafka, RabbitMQ, Redis Streams). |
+| Component                      | Description                                                                                                                                          | High-Load Strategies                                                                                                                                                |
+| ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| API Services                   | Stateless REST + WebSocket endpoints for score updates & leaderboard broadcast                                                                       | Horizontally scalable behind load balancer, autoscaling                                                                                                             |
+| Redis                          | Use Redis to hold leaderboard sorted sets & pub/sub for broadcasting updates                                                                         | Redis Cluster to horizontally shard data & pub/sub                                                                                                                  |
+| Authentication & Authorization | JWT validation service or middleware ensures authorized requests only                                                                                | Separate auth microservice, caching JWT public keys                                                                                                                 |
+| Score Validation               | Business logic to validate score increments, rate limiting, anomaly detection                                                                        | Distributed in API servers with cache synchronization                                                                                                               |
+| WebSocket Gateway              | Handles large-scale connection management, keeps persistent WS connections                                                                           | Use dedicated WS gateway (e.g., NGINX,...) with sticky sessions                                                                                                     |
+| Messaging Queue                | This is a critical middleware component responsible for asynchronous, reliable, and decoupled communication between Quest Service and Score Service. | Continuously monitor queue depth, processing lag, and broker health, choose the right tools for each case(Kafka, RabbitMQ, Redis Streams) base on applcation scale. |
 
 ---
 
-## Flow of Execution (High-Level)
+## Flow of Execution
 
 <img src="./sequence.png" />
 

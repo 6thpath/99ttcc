@@ -1,6 +1,6 @@
 # Pet Management
 
-A Node.js backend built with Express, TypeORM, and PostgreSQL for managing pet data.  
+A Node.js backend built with Express, TypeORM, and PostgreSQL for managing pet data.
 Includes validation, modular architecture, and environment-based configuration.
 
 ## Project Structure
@@ -8,17 +8,17 @@ Includes validation, modular architecture, and environment-based configuration.
 ```
 root/
 │
-├── dist/               # Compiled output
+├── dist/               # compiled output
 ├── source/
-│   ├── @types/         # global types
-│   ├── config/         # Env setup, DB config
-│   ├── controllers/    # Route handlers (token CRUD logic)
-│   ├── middlewares/    # Auth, error, validations
-│   ├── models/         # entity schemas or types
+│   ├── @types/         # additional types root
+│   ├── config/         # env setup, DB config
+│   ├── controllers/    # route handlers
+│   ├── middlewares/    # error, validations
+│   ├── models/         # entity schemas
 │   ├── routes/         # API route definitions
-│   ├── services/       # Business logic
-│   ├── app.ts          # Express app setup
-│   └── server.ts       # Server entry point
+│   ├── services/       # business logic
+│   ├── app.ts          # express app setup
+│   └── server.ts       # server entry point
 ├── .env
 ├── .env.keys
 ├── .prettierignore
@@ -47,9 +47,9 @@ root/
    ```
 
 2. **Configure environment:**
-   - (Required) Download and place it `.env.keys` at root.
-      - **Permission required** because encrypted `.env` contains database credentials
-      - Source: https://drive.google.com/file/d/1h3Xs75oYv_KAu5YYsCbmeL5qIsgYazrV/view?usp=sharing
+   - (Required) Download and place `.env.keys` at root.
+     - **Permission required** because encrypted `.env` contains database credentials
+     - Source: https://drive.google.com/file/d/1h3Xs75oYv_KAu5YYsCbmeL5qIsgYazrV/view?usp=sharing
    - (Optional) Decrypt with [dotenvx](https://dotenvx.com/) if you want to view env vars:
      ```sh
      pnpm run env:dec
